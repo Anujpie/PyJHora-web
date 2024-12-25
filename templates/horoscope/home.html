@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+  <h1>Generate horoscope</h1>
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="">{{ form.name.label }}</label>
+      {{ form.name }}
+    </div>
+
+    <div class="form-group">
+      <label for="">{{ form.gender.label }}</label>
+      {{ form.gender }}
+    </div>
+    
+    <div class="form-group">
+      <label for="">{{ form.date_of_birth.label }}</label>
+      {{ form.date_of_birth }}
+    </div>
+
+    <div class="form-group">
+      <label for="">{{ form.time_of_birth.label }}</label>
+      {{ form.time_of_birth }}
+    </div>
+    
+    <button type="submit" class="btn btn-success">Generate chart</button>
+    <button type="submit" class="btn btn-primary">Generate PDF</button>
+  </form>
+</div>
+{% endblock %}
